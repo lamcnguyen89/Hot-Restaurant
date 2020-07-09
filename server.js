@@ -8,7 +8,9 @@ var path = require("path");
 var app = express();
 var PORT = 3000;
 
-
+// Arrays for reservations and waitlist
+var reservations = [];
+var waitlist = [];
 
 
 
