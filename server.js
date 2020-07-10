@@ -35,6 +35,8 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));  
 });
 
+
+
 // second scope of code that fires...this method allows user to add info to the page (fill in form)
 // server is listening for the request
 app.get("/reserve", function(req, res) {
