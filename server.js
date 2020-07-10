@@ -47,12 +47,6 @@ app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));  
 });
 
-app.get("/home", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));  
-});
-
-
-
 
 // json sends over a type of object (can be an array or any object you want to send, its seen then strinify'ed)
 // receives reservation data
