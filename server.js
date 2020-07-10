@@ -33,6 +33,7 @@ app.get("/tables", function(req, res) {
 app.get("/api/tables", function(req, res) {
   return res.json(reservations);                    
 });
+
 // receives reservation data for overbooking (wailist)
 app.get("/api/waitlist", function(req, res) {
   return res.json(waitlist);
