@@ -29,10 +29,14 @@ app.get("/tables", function(req, res) {
 });
 
 // json sends over a type of object (can be an array or any object you want to send, its seen then strinify'ed)
+// receives reservation data
 app.get("/api/tables", function(req, res) {
   return res.json(reservations);                    
 });
-
+// receives reservation data for overbooking (wailist)
+app.get("/api/waitlist", function(req, res) {
+  return res.json(waitlist);
+})
 
 
 
