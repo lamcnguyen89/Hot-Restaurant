@@ -2,29 +2,34 @@
 // =============================================================
 var express = require("express");
 var path = require("path");
+const { table } = require("console");
 
 // Sets up the Express App
 // =============================================================
 var app = express();
 // port for heroku access
 var PORT = process.env.PORT || 3000;
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Arrays for reservations and waitlist
 var reservations = [];
 var waitlist = [];
-var AvailTables = 4
+var availTables = 4
+//for loop for each table
 
 function tablepush(){
-  for (i=0; i<=4;i++){
-    if(i<=4) { 
-      reservations.push[i]
-    }else{
-      waitlist.push[i]
-    }
+for (i=0; i<=availTables.length;i++){
+  if(i<=4) { 
+    reservations.push[i]
+  }else{
+    waitlist.push[i]
   }
-  }
-tablepush
-
+}
+}
+tablepush()
+console.log(reservations)
 // first scope of code that fires... 
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));  
@@ -54,8 +59,11 @@ app.get("/api/waitlist", function(req, res) {
 })
 
 app.post("/reserve", function(req, res) {
-  console.log(req.body); 
+  console.log(req.body)
+  res.json(req.body)
 });
+
+
 
 // Starts the server to begin listening
 // =============================================================
